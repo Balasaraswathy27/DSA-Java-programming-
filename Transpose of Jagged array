@@ -1,0 +1,54 @@
+import java.util.Scanner;
+public class arrayy{
+    public  void transpose(int arr[][],int r,int max){
+       int arr1[][]=new int[r][max];
+            for(int i=0;i<arr.length;i++){
+                for(int j=0;j<arr[i].length;j++){
+                    arr1[j][i]=arr[i][j];
+        
+        }
+    
+    }   
+     System.out.print("the contents in array is:\n");
+       for(int i=0;i<arr1.length;i++){
+        for(int j=0;j<arr1[i].length;j++){
+            System.out.print(" "+arr1[i][j]);
+        }
+        System.out.println(" ");
+    } 
+}
+    public static void main(String [] args){
+     Scanner scn=new Scanner(System.in);
+     int r,c;
+     System.out.print("enter the no of rows:");
+     r=scn.nextInt();
+     int arr[][]=new int[r][];
+     int k=r;
+     int max=0;
+    for(int i=0;i<k;i++){
+        System.out.print("enter the no of coulumns in row  " +(i+1)+":");
+        c=scn.nextInt();
+        if(c>max){
+            max=c;
+        }
+       arr[i]=new int[c];
+    }
+   
+    for(int i=0;i<arr.length;i++){
+        for(int j=0;j<arr[i].length;j++){
+         System.out.print("enter the value of element in row\t"+(i+1)+" column\t" +(j+1)+":");
+         arr[i][j]=scn.nextInt();
+        }
+    }
+
+    
+        
+
+    arrayy ary=new arrayy();
+    ary.transpose(arr,r,max);
+
+
+   scn.close();
+
+    }
+}
